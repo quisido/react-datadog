@@ -14,7 +14,7 @@
     "declarationMap": false,
     "downlevelIteration": true,
     "esModuleInterop": true,
-    "exactOptionalPropertyTypes": true,
+    "exactOptionalPropertyTypes": false,
     "forceConsistentCasingInFileNames": true,
     "incremental": false,
     "inlineSourceMap": false,
