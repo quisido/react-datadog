@@ -8,7 +8,6 @@
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
   "packageManager": "yarn@3.0.2",
-  "repository": "github:CharlesStover/react-datadog",
   "type": "module",
   "types": "./types/index.d.ts",
   "bugs": {
@@ -30,6 +29,10 @@
     "access": "public",
     "main": "./dist/cjs/index.cjs",
     "module": "./dist/esm/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CharlesStover/react-datadog.git"
   },
   "scripts": {
     "eslint": "eslint src",
