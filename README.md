@@ -18,7 +18,7 @@ instantiating DataDog RUM in your React application.
 ```javascript
 import DataDog from 'react-datadog';
 import { render } from 'react-dom';
-import App from './components';
+import { App } from './components';
 
 render(
   <DataDog
