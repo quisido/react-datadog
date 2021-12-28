@@ -1,7 +1,7 @@
 import type { RumInitConfiguration } from '@datadog/browser-rum';
 import type { ReactElement, ReactNode } from 'react';
 import type ReadonlyRumInitConfiguration from '../../types/readonly-rum-init-configuration';
-import useDataDog from './datadog.root.hook';
+import useDataDog from './datadog.hook';
 
 interface Props
   extends Omit<
@@ -13,6 +13,7 @@ interface Props
     >,
     ReadonlyRumInitConfiguration {
   readonly children: ReactNode;
+  readonly enabled?: boolean | undefined;
   readonly sessionReplayRecording?: boolean | undefined;
 }
 
@@ -25,6 +26,7 @@ export default function DataDog({
   clientToken,
   defaultPrivacyLevel,
   enableExperimentalFeatures,
+  enabled,
   env,
   intakeApiVersion,
   internalMonitoringApiKey,
@@ -52,6 +54,7 @@ export default function DataDog({
     clientToken,
     defaultPrivacyLevel,
     enableExperimentalFeatures,
+    enabled,
     env,
     intakeApiVersion,
     internalMonitoringApiKey,

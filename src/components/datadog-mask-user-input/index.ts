@@ -1,1 +1,1 @@
-export { default } from './datadog-mask-user-input.root.view';
+export { default } from './datadog-mask-user-input.view';

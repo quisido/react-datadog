@@ -1,1 +1,1 @@
-export { default } from './datadog-hidden.root.view';
+export { default } from './datadog-hidden.view';

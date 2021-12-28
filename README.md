@@ -44,6 +44,13 @@ import DataDog from 'react-datadog';'
 In addition to the RUM init configuration, the `<DataDog />` component also
 accepts additional props:
 
+#### `enabled`
+
+Type: `boolean` (default: `true`)
+
+Unless explicitly set to `false`, the `<DataDog />` component will automatically
+initialize on mount.
+
 #### `sessionReplayRecording`
 
 Type: `boolean` (default: `true`)

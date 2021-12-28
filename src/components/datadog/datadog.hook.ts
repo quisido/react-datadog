@@ -13,8 +13,11 @@ interface Props
       | 'replica'
     >,
     ReadonlyRumInitConfiguration {
+  readonly enabled?: boolean | undefined;
   readonly sessionReplayRecording?: boolean | undefined;
 }
+
+const FIRST_ITEM = 0;
 
 export default function useDataDog({
   actionNameAttribute,
@@ -24,6 +27,7 @@ export default function useDataDog({
   clientToken,
   defaultPrivacyLevel,
   enableExperimentalFeatures,
+  enabled = true,
   env,
   intakeApiVersion,
   internalMonitoringApiKey,
@@ -44,28 +48,18 @@ export default function useDataDog({
   version,
 }: Readonly<Props>): void {
   useEffect((): void => {
-    const getAllowedTracingOrigins = (): (RegExp | string)[] | undefined => {
-      if (typeof allowedTracingOrigins === 'undefined') {
-        return;
-      }
-      return [...allowedTracingOrigins];
-    };
-
-    const getEnableExperimentalFeatures = (): string[] | undefined => {
-      if (typeof enableExperimentalFeatures === 'undefined') {
-        return;
-      }
-      return [...enableExperimentalFeatures];
-    };
+    if (!enabled) {
+      return;
+    }
 
     datadogRum.init({
       actionNameAttribute,
-      allowedTracingOrigins: getAllowedTracingOrigins(),
+      allowedTracingOrigins: allowedTracingOrigins?.slice(FIRST_ITEM),
       applicationId,
       beforeSend,
       clientToken,
       defaultPrivacyLevel,
-      enableExperimentalFeatures: getEnableExperimentalFeatures(),
+      enableExperimentalFeatures: enableExperimentalFeatures?.slice(FIRST_ITEM),
       env,
       intakeApiVersion,
       internalMonitoringApiKey,
@@ -92,6 +86,7 @@ export default function useDataDog({
     clientToken,
     defaultPrivacyLevel,
     enableExperimentalFeatures,
+    enabled,
     env,
     intakeApiVersion,
     internalMonitoringApiKey,
@@ -112,7 +107,7 @@ export default function useDataDog({
   ]);
 
   useEffect((): VoidFunction | undefined => {
-    if (!sessionReplayRecording) {
+    if (!enabled || !sessionReplayRecording) {
       return;
     }
 
@@ -120,5 +115,5 @@ export default function useDataDog({
     return (): void => {
       datadogRum.stopSessionReplayRecording();
     };
-  }, [sessionReplayRecording]);
+  }, [enabled, sessionReplayRecording]);
 }

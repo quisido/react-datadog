@@ -12,7 +12,7 @@ jest.mock('@datadog/browser-rum', () => ({
 
 import { renderHook } from '@testing-library/react-hooks';
 import DEFAULT_SAMPLE_RATE from '../../constants/default-sample-rate';
-import useDataDog from './datadog.root.hook';
+import useDataDog from './datadog.hook';
 
 const ONCE = 1;
 
@@ -51,6 +51,17 @@ describe('useDataDog', (): void => {
       useSecureSessionCookie: undefined,
       version: undefined,
     });
+  });
+
+  it('should not call init if `enabled` is false', (): void => {
+    renderHook(useDataDog, {
+      initialProps: {
+        applicationId: 'test-application-id',
+        clientToken: 'test-client-token',
+        enabled: false,
+      },
+    });
+    expect(TEST_INIT).not.toHaveBeenCalled();
   });
 
   it('should allow custom mutable values', (): void => {
@@ -106,6 +117,17 @@ describe('useDataDog', (): void => {
     });
     expect(TEST_START_SESSION_REPLAY_RECORDING).toHaveBeenCalledTimes(ONCE);
     expect(TEST_START_SESSION_REPLAY_RECORDING).toHaveBeenLastCalledWith();
+  });
+
+  it('should not start session replay recording when `enabled` is false', (): void => {
+    renderHook(useDataDog, {
+      initialProps: {
+        applicationId: 'test-application-id',
+        clientToken: 'test-client-token',
+        enabled: false,
+      },
+    });
+    expect(TEST_START_SESSION_REPLAY_RECORDING).not.toHaveBeenCalled();
   });
 
   it('should not start session replay recording when `sessionReplayRecording` is false', (): void => {

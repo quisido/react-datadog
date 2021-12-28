@@ -1,1 +1,1 @@
-export { default } from './datadog-privacy.root.view';
+export { default } from './datadog-privacy.view';
