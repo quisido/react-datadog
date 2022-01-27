@@ -1,7 +1,8 @@
 import type { RumInitConfiguration } from '@datadog/browser-rum';
 import type { ReactElement, ReactNode } from 'react';
 import type ReadonlyRumInitConfiguration from '../../types/readonly-rum-init-configuration';
-import useDataDog from './datadog.hook';
+import type User from '../../types/user';
+import useDatadog from './datadog.hook';
 
 interface Props
   extends Omit<
@@ -15,9 +16,10 @@ interface Props
   readonly children: ReactNode;
   readonly enabled?: boolean | undefined;
   readonly sessionReplayRecording?: boolean | undefined;
+  readonly user?: User | undefined;
 }
 
-export default function DataDog({
+export default function Datadog({
   actionNameAttribute,
   allowedTracingOrigins,
   applicationId,
@@ -28,7 +30,6 @@ export default function DataDog({
   enableExperimentalFeatures,
   enabled,
   env,
-  intakeApiVersion,
   internalMonitoringApiKey,
   proxyUrl,
   replaySampleRate,
@@ -41,12 +42,12 @@ export default function DataDog({
   trackInteractions,
   trackSessionAcrossSubdomains,
   trackViewsManually,
-  useAlternateIntakeDomains,
   useCrossSiteSessionCookie,
   useSecureSessionCookie,
+  user,
   version,
 }: Readonly<Props>): ReactElement {
-  useDataDog({
+  useDatadog({
     actionNameAttribute,
     allowedTracingOrigins,
     applicationId,
@@ -56,7 +57,6 @@ export default function DataDog({
     enableExperimentalFeatures,
     enabled,
     env,
-    intakeApiVersion,
     internalMonitoringApiKey,
     proxyUrl,
     replaySampleRate,
@@ -69,9 +69,9 @@ export default function DataDog({
     trackInteractions,
     trackSessionAcrossSubdomains,
     trackViewsManually,
-    useAlternateIntakeDomains,
     useCrossSiteSessionCookie,
     useSecureSessionCookie,
+    user,
     version,
   });
 

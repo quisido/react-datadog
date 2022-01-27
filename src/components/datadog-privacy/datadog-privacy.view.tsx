@@ -5,7 +5,7 @@ interface Props {
   readonly level: 'allow' | 'hidden' | 'mask-user-input' | 'mask';
 }
 
-export default function DataDogPrivacy({
+export default function DatadogPrivacy({
   children,
   level,
 }: Props): ReactElement {

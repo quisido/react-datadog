@@ -1,13 +1,13 @@
 {
   "name": "react-datadog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Charles Stover <react-datadog@charlesstover.com>",
-  "description": "React wrapper for instantiating DataDog",
+  "description": "React wrapper for instantiating Datadog",
   "homepage": "https://www.npmjs.com/package/react-datadog",
   "license": "MIT",
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
-  "packageManager": "yarn@3.0.2",
+  "packageManager": "yarn@3.1.1",
   "type": "module",
   "types": "./types/index.d.ts",
   "bugs": {
@@ -37,9 +37,12 @@
   "scripts": {
     "eslint": "eslint src",
     "jest": "jest",
-    "jest-watch": "jest --coverage=false --watch",
+    "jest:watch": "jest --coverage=false --watch",
     "rollup": "rollup --config",
-    "rollup-watch": "rollup --config --watch"
+    "rollup:watch": "rollup --config --watch"
+  },
+  "dependencies": {
+    "@datadog/browser-rum": "^4.2.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^20.0.0",
@@ -72,8 +75,5 @@
   "peerDependencies": {
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
-  },
-  "dependencies": {
-    "@datadog/browser-rum": "^3.6.1"
   }
 }

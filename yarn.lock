@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 4
+  version: 5
   cacheKey: 8
 
 "@arcanis/slice-ansi@npm:^1.0.2":
@@ -39,7 +39,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.15.5, @babel/core@npm:^7.1.0, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5":
   version: 7.15.5
   resolution: "@babel/core@npm:7.15.5"
   dependencies:
@@ -448,33 +448,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@datadog/browser-core@npm:3.6.1":
-  version: 3.6.1
-  resolution: "@datadog/browser-core@npm:3.6.1"
+"@datadog/browser-core@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@datadog/browser-core@npm:4.2.0"
   dependencies:
     tslib: ^1.10.0
-  checksum: b2e6e18684f2b021b1c2ad21cfbca80d574843ac308946a43b6960605ff68052976f080793a9db2f51618a3ec111ad55d830764481b5c0219b8369cbb3013c95
+  checksum: 5f35e31b4b940ce075a431826b0465d5cd9149d1bfd6e64a01c5c7368a587135ec119903598a6d35c37d3b2f57fce09b51b50583175f09d3715b5fd6b535f39e
   languageName: node
   linkType: hard
 
-"@datadog/browser-rum-core@npm:3.6.1":
-  version: 3.6.1
-  resolution: "@datadog/browser-rum-core@npm:3.6.1"
+"@datadog/browser-rum-core@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@datadog/browser-rum-core@npm:4.2.0"
   dependencies:
-    "@datadog/browser-core": 3.6.1
+    "@datadog/browser-core": 4.2.0
     tslib: ^1.10.0
-  checksum: 4c52895ed5f696345552d58dba77a709f3c3616bc92bd2fb18369620f269ff26fac1825fdaf18a5eff0277318642d5395bdaebb8e0565216e38e52eb7eb613a6
+  checksum: 558e74ce6d0cdd8ef4202a775e42b50bbfccb11750d8b07b4371a98f0f9c67882adbf6695d74dcdcfbc5867588d4db50b28f0c5b0e6ede8553d35129b71dfe75
   languageName: node
   linkType: hard
 
-"@datadog/browser-rum@npm:^3.6.1":
-  version: 3.6.1
-  resolution: "@datadog/browser-rum@npm:3.6.1"
+"@datadog/browser-rum@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "@datadog/browser-rum@npm:4.2.0"
   dependencies:
-    "@datadog/browser-core": 3.6.1
-    "@datadog/browser-rum-core": 3.6.1
+    "@datadog/browser-core": 4.2.0
+    "@datadog/browser-rum-core": 4.2.0
     tslib: ^1.10.0
-  checksum: 163ef67da7c54c2226862b5afcd4a6157b630bf20821047adc0d65f4da01683966870236e6d4863e7afd41c4771063572c648b2219edcd8039e803c13e87e872
+  checksum: 3f8c6e921baef55154fe6c35e463a85c16abb5882101c9a647f984660ef636fd46ca7285c2dd2d374cbc845ed6879418127fa5f56d3f11d04dae488e30239790
   languageName: node
   linkType: hard
 
@@ -2976,15 +2976,16 @@ __metadata:
   dependencies:
     node-gyp: latest
   checksum: 97ade64e75091afee5265e6956cb72ba34db7819b4c3e94c431d4be2b19b8bb7a2d4116da417950c3425f17c8fe693d25e20212cac583ac1521ad066b77ae31f
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
 "fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=1cc4b2"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
   dependencies:
     node-gyp: latest
-  checksum: 78db9daf1f6526a49cefee3917cc988f62dc7f25b5dd80ad6de4ffc4af7f0cab7491ac737626ff53e482a111bc53aac9e411fe3602458eca36f6a003ecf69c16
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
@@ -3968,7 +3969,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-resolve@npm:27.2.0, jest-resolve@npm:^27.2.0":
+"jest-resolve@npm:^27.2.0":
   version: 27.2.0
   resolution: "jest-resolve@npm:27.2.0"
   dependencies:
@@ -5248,7 +5249,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "react-datadog@workspace:."
   dependencies:
-    "@datadog/browser-rum": ^3.6.1
+    "@datadog/browser-rum": ^4.2.0
     "@rollup/plugin-commonjs": ^20.0.0
     "@rollup/plugin-node-resolve": ^13.0.5
     "@testing-library/react": ^12.1.0
@@ -5474,21 +5475,21 @@ resolve@^2.0.0-next.3:
 
 "resolve@patch:resolve@1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>":
   version: 1.20.0
-  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff"
+  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"
   dependencies:
     is-core-module: ^2.2.0
     path-parse: ^1.0.6
-  checksum: bed00be983cd20a8af0e7840664f655c4b269786dbd9595c5f156cd9d8a0050e65cdbbbdafc30ee9b6245b230c78a2c8ab6447a52545b582f476c29adb188cc5
+  checksum: a0dd7d16a8e47af23afa9386df2dff10e3e0debb2c7299a42e581d9d9b04d7ad5d2c53f24f1e043f7b3c250cbdc71150063e53d0b6559683d37f790b7c8c3cd5
   languageName: node
   linkType: hard
 
 "resolve@patch:resolve@^2.0.0-next.3#~builtin<compat/resolve>":
   version: 2.0.0-next.3
-  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.3#~builtin<compat/resolve>::version=2.0.0-next.3&hash=00b1ff"
+  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.3#~builtin<compat/resolve>::version=2.0.0-next.3&hash=07638b"
   dependencies:
     is-core-module: ^2.2.0
     path-parse: ^1.0.6
-  checksum: eb88c5e53843bc022215744307a5f5664446c0fdb8f43c33456dce98d5ee6b3162d0cd0a177bb6f1c3d5c8bf01391ac7ab2de0e936e35318725fb40ba7efdaf6
+  checksum: 21684b4d99a4877337cdbd5484311c811b3e8910edb5d868eec85c6e6550b0f570d911f9a384f9e176172d6713f2715bd0b0887fa512cb8c6aeece018de6a9f8
   languageName: node
   linkType: hard
 
@@ -6231,11 +6232,11 @@ typescript@^4.4.3:
 
 "typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
   version: 4.4.3
-  resolution: "typescript@patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=32657b"
+  resolution: "typescript@patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=493e53"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 28ab98313afab46788ff41014fdb5932430ada6e03cf9e92ac47f406526a2cac1ae2894834e7da61e46b7429318e9c47f45ba8de323332f0cb9af99b72ebae74
+  checksum: 79f5c13d21c9dea3eb44d2b7002ff25a0569fefc432e083d65a360e3aca990aca25fc733e14aa6883b5e9a68e3e2f0330a34123e048806f91d701732ece00e6f
   languageName: node
   linkType: hard
 

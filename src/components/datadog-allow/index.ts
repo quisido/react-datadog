@@ -1,1 +1,1 @@
-export { default } from './datadog-allow.view';
+export { DataDogAllow, default } from './datadog-allow.view';

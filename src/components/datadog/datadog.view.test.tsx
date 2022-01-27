@@ -1,15 +1,15 @@
 import { render } from '@testing-library/react';
-import DataDog from '../..';
+import Datadog from '../..';
 
-describe('DataDog', (): void => {
+describe('Datadog', (): void => {
   it('should render children', (): void => {
     const { getByText } = render(
-      <DataDog
+      <Datadog
         applicationId="test-application-id"
         clientToken="test-client-token"
       >
         Hello world
-      </DataDog>,
+      </Datadog>,
     );
     getByText('Hello world');
   });

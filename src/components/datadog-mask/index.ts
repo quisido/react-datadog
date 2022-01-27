@@ -1,1 +1,1 @@
-export { default } from './datadog-mask.view';
+export { DataDogMask, default } from './datadog-mask.view';

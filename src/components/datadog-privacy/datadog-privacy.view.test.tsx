@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
-import DataDogPrivacy from '.';
+import DatadogPrivacy from '.';
 
-describe('DataDogPrivacy', (): void => {
+describe('DatadogPrivacy', (): void => {
   it('should render a privacy class name and data attribute', (): void => {
     const { getByText } = render(
-      <DataDogPrivacy level="allow">children</DataDogPrivacy>,
+      <DatadogPrivacy level="allow">children</DatadogPrivacy>,
     );
 
     const element: HTMLElement = getByText('children');

@@ -1,8 +1,11 @@
 import type { RumInitConfiguration } from '@datadog/browser-rum';
 import { datadogRum } from '@datadog/browser-rum';
 import { useEffect } from 'react';
+import DEFAULT_REPLAY_SAMPLE_RATE from '../../constants/default-replay-sample-rate';
 import DEFAULT_SAMPLE_RATE from '../../constants/default-sample-rate';
 import type ReadonlyRumInitConfiguration from '../../types/readonly-rum-init-configuration';
+import type User from '../../types/user';
+import useUser from './hooks/use-user';
 
 interface Props
   extends Omit<
@@ -15,11 +18,12 @@ interface Props
     ReadonlyRumInitConfiguration {
   readonly enabled?: boolean | undefined;
   readonly sessionReplayRecording?: boolean | undefined;
+  readonly user?: User | undefined;
 }
 
 const FIRST_ITEM = 0;
 
-export default function useDataDog({
+export default function useDatadog({
   actionNameAttribute,
   allowedTracingOrigins,
   applicationId,
@@ -29,10 +33,9 @@ export default function useDataDog({
   enableExperimentalFeatures,
   enabled = true,
   env,
-  intakeApiVersion,
   internalMonitoringApiKey,
   proxyUrl,
-  replaySampleRate,
+  replaySampleRate = DEFAULT_REPLAY_SAMPLE_RATE,
   replica,
   sampleRate = DEFAULT_SAMPLE_RATE,
   service,
@@ -42,9 +45,9 @@ export default function useDataDog({
   trackInteractions = true,
   trackSessionAcrossSubdomains,
   trackViewsManually,
-  useAlternateIntakeDomains,
   useCrossSiteSessionCookie,
   useSecureSessionCookie,
+  user,
   version,
 }: Readonly<Props>): void {
   useEffect((): void => {
@@ -61,7 +64,6 @@ export default function useDataDog({
       defaultPrivacyLevel,
       enableExperimentalFeatures: enableExperimentalFeatures?.slice(FIRST_ITEM),
       env,
-      intakeApiVersion,
       internalMonitoringApiKey,
       proxyUrl,
       replaySampleRate,
@@ -73,7 +75,6 @@ export default function useDataDog({
       trackInteractions,
       trackSessionAcrossSubdomains,
       trackViewsManually,
-      useAlternateIntakeDomains,
       useCrossSiteSessionCookie,
       useSecureSessionCookie,
       version,
@@ -88,7 +89,6 @@ export default function useDataDog({
     enableExperimentalFeatures,
     enabled,
     env,
-    intakeApiVersion,
     internalMonitoringApiKey,
     proxyUrl,
     replaySampleRate,
@@ -100,7 +100,6 @@ export default function useDataDog({
     trackInteractions,
     trackSessionAcrossSubdomains,
     trackViewsManually,
-    useAlternateIntakeDomains,
     useCrossSiteSessionCookie,
     useSecureSessionCookie,
     version,
@@ -116,4 +115,6 @@ export default function useDataDog({
       datadogRum.stopSessionReplayRecording();
     };
   }, [enabled, sessionReplayRecording]);
+
+  useUser(user);
 }
