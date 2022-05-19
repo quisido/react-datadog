@@ -448,33 +448,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@datadog/browser-core@npm:4.2.0":
-  version: 4.2.0
-  resolution: "@datadog/browser-core@npm:4.2.0"
-  dependencies:
-    tslib: ^1.10.0
-  checksum: 5f35e31b4b940ce075a431826b0465d5cd9149d1bfd6e64a01c5c7368a587135ec119903598a6d35c37d3b2f57fce09b51b50583175f09d3715b5fd6b535f39e
+"@datadog/browser-core@npm:4.10.3":
+  version: 4.10.3
+  resolution: "@datadog/browser-core@npm:4.10.3"
+  checksum: cab6b713d5bc2d4b112c820675849e397145881af29b10f671428c5028a6e5e5287e89cdff0a585b2acfb1cfd5226ed734e0cbd8afca39a294a978445abc9601
   languageName: node
   linkType: hard
 
-"@datadog/browser-rum-core@npm:4.2.0":
-  version: 4.2.0
-  resolution: "@datadog/browser-rum-core@npm:4.2.0"
+"@datadog/browser-rum-core@npm:4.10.3":
+  version: 4.10.3
+  resolution: "@datadog/browser-rum-core@npm:4.10.3"
   dependencies:
-    "@datadog/browser-core": 4.2.0
-    tslib: ^1.10.0
-  checksum: 558e74ce6d0cdd8ef4202a775e42b50bbfccb11750d8b07b4371a98f0f9c67882adbf6695d74dcdcfbc5867588d4db50b28f0c5b0e6ede8553d35129b71dfe75
+    "@datadog/browser-core": 4.10.3
+  checksum: 1748a42d2273fd338bac147f105a6f2ba3baa216f42e61f542594b820019c5cff5cf608111063d1254ec1b6a33e790d265c6be05af46b1870ad1cee8ab8e1894
   languageName: node
   linkType: hard
 
 "@datadog/browser-rum@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "@datadog/browser-rum@npm:4.2.0"
+  version: 4.10.3
+  resolution: "@datadog/browser-rum@npm:4.10.3"
   dependencies:
-    "@datadog/browser-core": 4.2.0
-    "@datadog/browser-rum-core": 4.2.0
-    tslib: ^1.10.0
-  checksum: 3f8c6e921baef55154fe6c35e463a85c16abb5882101c9a647f984660ef636fd46ca7285c2dd2d374cbc845ed6879418127fa5f56d3f11d04dae488e30239790
+    "@datadog/browser-core": 4.10.3
+    "@datadog/browser-rum-core": 4.10.3
+  checksum: 5dbd75636bdb3a99d2eb0363ff0de93d75fcb06253e59cb0a3d1d0450a16697b5f466e5df2c9e89536fa81b6f129af730a36ddcd8a572770cdd4b7d33d17f8c5
   languageName: node
   linkType: hard
 
@@ -5277,8 +5273,9 @@ __metadata:
     tslib: ^2.3.1
     typescript: ^4.4.3
   peerDependencies:
-    react: ^17.0.0
-    react-dom: ^17.0.0
+    "@datadog/browser-rum": ^4.0.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
   languageName: unknown
   linkType: soft
 
@@ -6133,7 +6130,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.10.0, tslib@npm:^1.13.0, tslib@npm:^1.8.1":
+"tslib@npm:^1.13.0, tslib@npm:^1.8.1":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd

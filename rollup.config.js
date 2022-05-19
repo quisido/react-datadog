@@ -11,10 +11,7 @@ const MAIN_DIR = path.parse(packageJson.main).dir;
 const MODULE_DIR = path.parse(packageJson.module).dir;
 const TSCONFIG = IS_DEV ? './tsconfig.development.json' : './tsconfig.json';
 
-const EXTERNAL = new Set([
-  ...Object.keys(packageJson.dependencies),
-  ...Object.keys(packageJson.peerDependencies),
-]);
+const EXTERNAL = new Set([...Object.keys(packageJson.peerDependencies)]);
 
 export default [
   {
